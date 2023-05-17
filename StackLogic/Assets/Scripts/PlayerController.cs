@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
         {
             other.AddComponent<CollectedCoffee>();
             StackHolder.Instance.coffeeList.Add(other.transform);
+            
+            UIManager.Instance.UpdateCoinValue();
+            
             other.tag = "Collected";
             StackHolder.Instance.AnimateCollectables();
         }
@@ -51,5 +54,4 @@ public class PlayerController : MonoBehaviour
                 Vector3.Lerp(currentPos, prevPos, lerpSpeed * Time.deltaTime);
         }
     }
-
 }

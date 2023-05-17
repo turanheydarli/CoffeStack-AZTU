@@ -10,6 +10,9 @@ public class CollectedCoffee : MonoBehaviour
             other.AddComponent<CollectedCoffee>();
             other.tag = "Collected";
             StackHolder.Instance.coffeeList.Add(other.transform);
+            
+            UIManager.Instance.UpdateCoinValue();
+
             StackHolder.Instance.AnimateCollectables();
         }
     }
